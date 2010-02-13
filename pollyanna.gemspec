@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pollyanna}
-  s.version = "1.0.1"
+  s.version = "1.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Henning Koch"]
@@ -16,12 +16,15 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    "MIT-LICENSE",
+    ".gitignore",
+     "MIT-LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "lib/pollyanna.rb",
      "lib/pollyanna/search.rb",
      "lib/pollyanna/searchable.rb",
+     "pollyanna.gemspec",
      "spec/app_root/app/controllers/application_controller.rb",
      "spec/app_root/app/models/movie.rb",
      "spec/app_root/config/boot.rb",

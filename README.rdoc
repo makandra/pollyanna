@@ -1,12 +1,52 @@
-= Pollyanna - very simple search
+= Pollyanna - very simple search for your ActiveRecord models
 
-== Make a model searchable
+Pollyanna adds a very simple full text search to your ActiveRecord models.
+Before saving, searchable models copy strings relevant to the search into a text column.
+Pollyanna finds results for a query using LIKE patterns in SQL.
 
-- Add a text column "search_text" to a model
-- Have the model include Pollyanna::Searchable
-- Overwrite #search_text to define which text is indexed upon saving
-- Get a scope for your match with Model.search("query words here")
-- There's some more goodness I don't care to document. Use the code, Luke!
+We found Pollyanna very useful for search-as-you-type boxes.
+
+== Example 
+
+    class Movie < ActiveRecord::Base
+      include Pollyanna::Searchable
+
+      def search_text
+        "#{title} #{year} #{director}"
+      end
+
+    end
+
+    class MoviesController
+
+      def index
+        @movies = Movie.search(params[:query])
+      end
+
+    end
+
+== Making a model searchable
+
+1. Add a text column "search_text" to a model
+2. Have the model include <tt>Pollyanna::Searchable</tt>
+3. Overwrite <tt>search_text</tt> to define which text is indexed upon saving
+4. <tt>Model.search("query goes here")</tt> now gives you a scope for the results of your query. Blank queries return everything.
+
+== How queries are matched
+
+- Pollyanna matches partial words, so "oo" matches "foo".
+- Multiple words in a query are AND-ed automatically.
+
+== Installation
+
+Add the following to your <tt>Initializer.run</tt> block in your <tt>environment.rb</tt>:
+    config.gem 'pollyanna', :source => 'http://gemcutter.org'
+Then do a 
+    sudo rake gems:install
+
+Alternatively, use
+    sudo gem sources -a http://gemcutter.org
+    sudo gem install pollyanna
 
 == Credits
 
