@@ -1,0 +1,15 @@
+= Pollyanna - very simple search
+
+== Make a model searchable
+
+- Add a text column "search_text" to a model
+- Have the model include Pollyanna::Searchable
+- Overwrite #search_text to define which text is indexed upon saving
+- Get a scope for your match with Model.search("query words here")
+- There's some more goodness I don't care to document. Use the code, Luke!
+
+== Credits
+
+Henning Koch
+
+{www.makandra.de}[http://www.makandra.de/]
