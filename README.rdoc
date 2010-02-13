@@ -32,6 +32,10 @@ We found Pollyanna very useful for search-as-you-type boxes.
 3. Overwrite <tt>search_text</tt> to define which text is indexed upon saving
 4. <tt>Model.search("query goes here")</tt> now gives you a scope for the results of your query. Blank queries return everything.
 
+== Searching other columns
+
+If you want to search a column other than <tt>search_text</tt>, you may say <tt>Movie.search(query, :by => "other_column")</tt>.
+
 == How queries are matched
 
 - Pollyanna matches partial words, so "oo" matches "foo".
