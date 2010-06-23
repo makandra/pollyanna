@@ -41,16 +41,23 @@ If you want to search a column other than <tt>search_text</tt>, you may say <tt>
 - Pollyanna matches partial words, so "oo" matches "foo".
 - Multiple words in a query are AND-ed automatically.
 
+
 == Installation
 
-Add the following to your <tt>Initializer.run</tt> block in your <tt>environment.rb</tt>:
-    config.gem 'pollyanna', :source => 'http://gemcutter.org'
-Then do a 
-    sudo rake gems:install
-
-Alternatively, use
-    sudo gem sources -a http://gemcutter.org
+Pollyanna is a gem, which you can install with
     sudo gem install pollyanna
+
+In Rails 2, add the following to your <tt>environment.rb</tt>:
+    config.gem 'pollyanna'
+
+In Rails 3, add the following to your <tt>Gemfile</tt>:
+    gem 'pollyanna'
+
+
+== Rails 3 compatibility
+
+We cannot guarantee Rails 3 compatibility at this point, but we will upgrade the gem when Rails 3 is released.
+
 
 == Credits
 
