@@ -63,4 +63,6 @@ We cannot guarantee Rails 3 compatibility at this point, but we will upgrade the
 
 Henning Koch
 
+{gem-session.com}[http://gem-session.com/]
+
 {www.makandra.de}[http://www.makandra.de/]
