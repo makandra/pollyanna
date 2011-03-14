@@ -4,8 +4,7 @@ module Pollyanna
     def self.included(klass)
       klass.class_eval do
         before_save :set_search_text
-        # Use Proc.new so the number of arguments does not matter
-        named_scope :search, Proc.new { |query, options| Search.new(query, table_name).scope_options(options) }
+        named_scope :search, lambda { |*args| query, options = args; Search.new(query, table_name).scope_options(options) }
       end
     end
     
