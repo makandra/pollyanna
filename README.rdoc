@@ -6,7 +6,7 @@ Pollyanna finds results for a query using LIKE patterns in SQL.
 
 We found Pollyanna very useful for search-as-you-type boxes.
 
-If you are looking for a more sophisticated solution, check out [Dusen](https://github.com/makandra/dusen).
+If you are looking for a more sophisticated solution, check out {Dusen}[https://github.com/makandra/dusen].
 
 == Example 
 
